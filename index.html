@@ -61,11 +61,14 @@
                     <a href="mailto:msaravanan2496@gmail.com" class="flex items-center space-x-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-xl transition border border-white/10">
                         <span class="text-sm font-semibold">msaravanan2496@gmail.com</span>
                     </a>
-                </div>
+                    </div>
             </div>
             <div class="hidden md:block">
                 <div class="w-64 h-64 rounded-3xl overflow-hidden border-4 border-emerald-500/30 shadow-2xl bg-slate-800 flex items-center justify-center">
-                    <span class="text-slate-500 text-6xl font-bold">SM</span>
+                    <img src="assets/profile.jpg" alt="Saravanan M"
+                         class="w-full h-full object-cover"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <span style="display:none;" class="w-full h-full items-center justify-center text-slate-500 text-6xl font-bold">SM</span>
                 </div>
             </div>
         </div>
@@ -73,12 +76,15 @@
 
     <main class="max-w-6xl mx-auto px-6 -mt-12 relative z-10">
 
+        <!-- 30-second intro video (only renders if INTRO_VIDEO.type isn't 'none') -->
+        <section id="intro-video" class="mb-16"></section>
+
         <!-- Impact Dashboard Section -->
         <section id="impact" class="mb-16">
             <div class="grid lg:grid-cols-3 gap-8">
                 <div class="lg:col-span-2 glass-card p-8 shadow-xl">
                     <h2 class="text-2xl font-bold mb-2">Operational Transformation</h2>
-                    <p class="text-slate-500 text-sm mb-8">Performance metrics from the IT Operations deployment.</p>
+                    <p class="text-slate-500 text-sm mb-8">Performance metrics from the IT Operations AI Triage deployment.</p>
                     <div class="chart-container">
                         <canvas id="impactChart"></canvas>
                     </div>
@@ -135,7 +141,7 @@
         <section id="automations" class="mb-20">
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-bold tracking-tight">Automation Portfolio</h2>
-                <p class="text-slate-500 mt-2 max-w-2xl mx-auto">7+ years of test automation, SOP automations, monitoring, and provisioning tooling across Cerillion, Liberate CRM &amp; Symphonica. </p>
+                <p class="text-slate-500 mt-2 max-w-2xl mx-auto">7+ years of automation on proactive monitoring, SOP's, Testing and provisioning tooling across Cerillion, Liberate CRM, &amp; Symphonica/Intraway Provisioning system. </p>
             </div>
             <div id="automation-filters" class="flex flex-wrap justify-center gap-3 mb-10"></div>
             <div id="automation-grid" class="grid md:grid-cols-2 gap-6"></div>
@@ -186,6 +192,16 @@
        array; no HTML/layout editing required.
        ===================================================================== */
 
+    // ---- 30-second intro video -----------------------------------------
+    // type: "none"    -> section is skipped entirely (default, nothing to show yet)
+    // type: "youtube" -> paste the VIDEO ID only (the part after v= in the URL), e.g. "dQw4w9WgXcQ"
+    //                    video must be Public or Unlisted (not Private) to embed
+    // type: "file"    -> paste the path to an mp4 you've uploaded into /assets, e.g. "assets/intro.mp4"
+    const INTRO_VIDEO = {
+        type: "none",
+        src: "",
+    };
+
     const IMPACT_STATS = [
         { value: "70%", label: "Reduction in Incident Response Time", emphasis: true },
         { value: "4+",  label: "Critical Manual Bottlenecks Automated" },
@@ -198,7 +214,7 @@
             key: "agent",
             nav: "Provagent GPT",
             title: "Provagent GPT",
-            description: "Architected a sophisticated prompt-based AI agent integrated with internal telecom APIs (HANSEN SPM/DPM, Symphonica) to automate complex provisioning flows, replacing manual intervention with self-healing runbooks.",
+            description: "Architected a sophisticated prompt-based AI agent integrated with internal telecom APIs (HANSEN SPM/DPM) to automate complex provisioning flows, replacing manual intervention with self-healing runbooks.",
             stack: ["LangChain", "HANSEN SPM/DPM API", "FastAPI", "Prompt Engineering"],
             outcome: "Manual provisioning intervention replaced with self-healing runbooks"
         },
@@ -207,7 +223,7 @@
             nav: "Hybrid AI Triage &amp; SOP",
             title: "Hybrid AI Triage System &amp; SOP",
             description: "Architected a Hybrid AI Triage System utilizing a Python-based regex classifier paired with first-level analysis from internal APIs of different applications, plus LLM fallbacks and context engines, to automate RCA, data-driven SOPs, and alert correlation &mdash; dramatically reducing MTTR and operational costs. Integrating OAuth 2.0 into the hybrid triage engine ensured this high-impact AI automation stays compliant with enterprise security standards while delivering a 70% response acceleration.",
-            stack: ["Python Regex", "Internal APIs", "LLM Fallback", "OAuth 2.0", "Admin Console with Metrics"],
+            stack: ["Python Regex", "Internal APIs", "LLM Fallback", "OAuth 2.0", "Splunk Telemetry"],
             outcome: "70% response acceleration, reduced MTTR &amp; operational cost"
         },
         {
@@ -335,12 +351,49 @@
 
     const EXPERIENCE = [
         {
-            role: "Lead / Senior Automation &amp; AIOps Engineer",
-            company: "Hansen Managed Services",
-            period: "Add exact dates here",
-            summary: "Owns test automation, monitoring, and — since 2026 — agentic AI tooling across Cerillion and Liberate CRM stacks for telecom clients.",
+            role: "Lead Engineer",
+            company: "Prodapt",
+            period: "Jul 2026 – Present · 2 mos",
+            location: "Guindy, Tamil Nadu, India · Hybrid",
+            highlights: [
+                "Technical Leadership &amp; Architecture: Lead the design, architecture, and deployment of enterprise-grade AI agents, RAG systems, and prompt-driven orchestration frameworks to automate complex operational workflows.",
+                "Backend &amp; API Integration: Drive seamless integration between LLM orchestration layers and internal enterprise APIs/provisioning systems to streamline end-to-end automation.",
+                "System Optimization: Implement semantic caching, latency reduction strategies, and error-handling mechanisms to improve platform reliability and compute efficiency.",
+                "Engineering Best Practices: Establish technical standards for prompt engineering, vector database management, and agent safety while conducting architectural reviews across projects.",
+                "Team Mentorship &amp; Strategy: Mentor junior and mid-level engineers, bridge business requirements with technical execution, and collaborate with leadership on AI adoption roadmaps."
+            ],
+            skills: ["Leadership", "Automation Architect", "LLM Orchestration", "RAG Systems", "Agent Safety"],
         },
-        // Add earlier roles here as: { role, company, period, summary }
+        {
+            role: "Senior Software Engineer",
+            company: "Prodapt",
+            period: "Jun 2023 – Jul 2026 · 3 yrs 2 mos",
+            location: "Guindy, Tamil Nadu, India · Hybrid",
+            skills: ["Python Backend Development", "Java Technical Support", "Automation", "AIOps", "CRM Systems"],
+        },
+        {
+            role: "Software Engineer",
+            company: "Prodapt",
+            period: "Feb 2021 – May 2023 · 2 yrs 4 mos",
+            location: "Chennai, Tamil Nadu, India · Hybrid",
+            skills: ["SQL", "Oracle Database", "Python", "Automation Scripting", "Production Support"],
+        },
+        {
+            role: "Associate Software Engineer",
+            company: "Prodapt",
+            period: "Jan 2019 – Feb 2021 · 2 yrs 2 mos",
+            location: "Thoraipakkam, Tamil Nadu, India",
+            skills: ["Pandas","Selenium","Robotic Framework","Python","REST APIs"],
+        },
+        {
+            role: "Internship Trainee",
+            company: "iPRIMED Education Solutions Private Ltd",
+            period: "Oct 2018 – Dec 2018 · 3 mos",
+            location: "",
+            skills: ["Java", "Type script", "Sql", "Pandas", "REST APIs"],
+        },
+        // Add new roles here as:
+        // { role, company, period, location, highlights: [ "..." ] (optional), skills: [ "..." ] (optional) }
     ];
 
     const PERSONAL_PROJECTS = [
@@ -379,6 +432,35 @@
     /* =====================================================================
        RENDER LAYER
        ===================================================================== */
+
+    function renderIntroVideo() {
+        const el = document.getElementById('intro-video');
+        if (INTRO_VIDEO.type === 'youtube' && INTRO_VIDEO.src) {
+            el.innerHTML = `
+                <div class="glass-card p-6 shadow-md max-w-2xl mx-auto">
+                    <h2 class="text-xl font-bold mb-4 text-center">30-Second Introduction</h2>
+                    <div class="relative w-full" style="padding-top:56.25%;">
+                        <iframe class="absolute top-0 left-0 w-full h-full rounded-2xl"
+                            src="https://www.youtube.com/embed/${INTRO_VIDEO.src}"
+                            title="Saravanan M — 30 second introduction"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>`;
+        } else if (INTRO_VIDEO.type === 'file' && INTRO_VIDEO.src) {
+            el.innerHTML = `
+                <div class="glass-card p-6 shadow-md max-w-2xl mx-auto">
+                    <h2 class="text-xl font-bold mb-4 text-center">30-Second Introduction</h2>
+                    <video class="w-full rounded-2xl" controls preload="metadata">
+                        <source src="${INTRO_VIDEO.src}" type="video/mp4">
+                        Your browser doesn't support embedded video.
+                    </video>
+                </div>`;
+        } else {
+            el.innerHTML = ''; // nothing to show yet
+        }
+    }
 
     function renderImpactStats() {
         document.getElementById('impact-stats').innerHTML = IMPACT_STATS.map(s => `
@@ -445,12 +527,23 @@
     function renderExperience() {
         document.getElementById('experience-list').innerHTML = EXPERIENCE.map(e => `
             <div class="glass-card p-6 shadow-md">
-                <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
+                <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
                     <h3 class="text-lg font-bold text-slate-900">${e.role}</h3>
                     <span class="text-emerald-600 font-semibold text-sm">${e.company}</span>
-                    <span class="text-slate-400 text-sm">${e.period}</span>
                 </div>
-                <p class="text-slate-500 text-sm leading-relaxed">${e.summary}</p>
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-3 text-slate-400 text-xs">
+                    <span>${e.period}</span>
+                    ${e.location ? `<span>&middot; ${e.location}</span>` : ''}
+                </div>
+                ${e.summary ? `<p class="text-slate-500 text-sm leading-relaxed mb-3">${e.summary}</p>` : ''}
+                ${e.highlights && e.highlights.length ? `
+                    <ul class="space-y-1.5 mb-4">
+                        ${e.highlights.map(h => `<li class="text-sm text-slate-600 flex gap-2"><span class="text-emerald-600">▸</span><span>${h}</span></li>`).join('')}
+                    </ul>` : ''}
+                ${e.skills && e.skills.length ? `
+                    <div class="flex flex-wrap gap-2">
+                        ${e.skills.map(s => `<span class="tech-pill">${s}</span>`).join('')}
+                    </div>` : ''}
             </div>
         `).join('');
     }
@@ -516,6 +609,7 @@
     }
 
     window.onload = () => {
+        renderIntroVideo();
         renderImpactStats();
         renderPillarButtons();
         renderPillarContent();
