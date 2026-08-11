@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saravanan M | Lead AI Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chosen Palette: Slate & Emerald - clean, professional, high-trust. -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        .chart-container { position: relative; width: 100%; max-width: 650px; margin: auto; height: 320px; }
+        .glass-card { background: rgba(255, 255, 255, 0.9); border: 1px solid #e2e8f0; border-radius: 1.5rem; transition: transform 0.2s ease; }
+        .glass-card:hover { transform: translateY(-4px); }
+        .nav-active { color: #059669; border-bottom: 2px solid #059669; }
+        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .tech-pill { background: #f1f5f9; color: #475569; padding: 4px 12px; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; border: 1px solid #e2e8f0; }
+        .status-dot { height: 8px; width: 8px; background-color: #10b981; border-radius: 50%; display: inline-block; margin-right: 6px; }
+        .pillar-btn { padding: 0.5rem 1.5rem; border-radius: 9999px; border-width: 2px; border-color: #e2e8f0; color: #64748b; font-weight: 700; transition: all .15s ease; white-space:nowrap; }
+        .pillar-btn:hover { border-color: #059669; color: #059669; }
+        .pillar-btn.is-active { background: #059669; color: #fff; border-color: #059669; }
+        .filter-chip { padding: 0.4rem 1rem; border-radius: 9999px; border: 2px solid #e2e8f0; color: #64748b; font-size: 0.8rem; font-weight: 700; transition: all .15s ease; white-space: nowrap; }
+        .filter-chip:hover { border-color: #059669; color: #059669; }
+        .filter-chip.is-active { background: #0f172a; color: #fff; border-color: #0f172a; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
+            <span class="font-bold text-xl tracking-tight text-slate-900">SM<span class="text-emerald-600">.</span></span>
+            <div class="hidden md:flex space-x-8">
+                <button onclick="scrollToSection('hero')" class="text-sm font-medium hover:text-emerald-600 transition">About</button>
+                <button onclick="scrollToSection('impact')" class="text-sm font-medium hover:text-emerald-600 transition">Impact</button>
+                <button onclick="scrollToSection('tech')" class="text-sm font-medium hover:text-emerald-600 transition">AI &amp; Agents</button>
+                <button onclick="scrollToSection('automations')" class="text-sm font-medium hover:text-emerald-600 transition">Automations</button>
+                <button onclick="scrollToSection('projects')" class="text-sm font-medium hover:text-emerald-600 transition">Projects</button>
+                <a href="mailto:msaravanan2496@gmail.com" class="bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-emerald-700 transition">Hire Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-gradient text-white py-20 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 items-center">
+            <div class="md:col-span-2">
+                <div class="flex items-center space-x-2 mb-4">
+                    <span class="status-dot animate-pulse"></span>
+                    <span class="text-emerald-400 font-bold text-xs tracking-widest uppercase">Available for GenAI Leadership Roles</span>
+                </div>
+                <h1 class="text-5xl font-extrabold mb-6">Saravanan M</h1>
+                <p class="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl">
+                    Lead AI Engineer specializing in <span class="text-white font-semibold">Agentic Workflows</span> and <span class="text-white font-semibold">Secure AIOps</span>. I build production-grade LLM systems that bridge the gap between AI potential and enterprise security &mdash; on top of 7+ years automating telecom CRM operations.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://www.linkedin.com/in/saravanan-m-150873175" target="_blank" class="flex items-center space-x-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-xl transition border border-white/10">
+                        <span class="text-sm font-semibold">LinkedIn</span>
+                    </a>
+                    <a href="mailto:msaravanan2496@gmail.com" class="flex items-center space-x-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-xl transition border border-white/10">
+                        <span class="text-sm font-semibold">msaravanan2496@gmail.com</span>
+                    </a>
+                    <span class="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-xl border border-white/10">
+                        <span class="text-sm font-semibold">+91 XXXXXXXXXX</span>
+                    </span>
+                </div>
+            </div>
+            <div class="hidden md:block">
+                <div class="w-64 h-64 rounded-3xl overflow-hidden border-4 border-emerald-500/30 shadow-2xl bg-slate-800 flex items-center justify-center">
+                    <span class="text-slate-500 text-6xl font-bold">SM</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-6xl mx-auto px-6 -mt-12 relative z-10">
+
+        <!-- Impact Dashboard Section -->
+        <section id="impact" class="mb-16">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 glass-card p-8 shadow-xl">
+                    <h2 class="text-2xl font-bold mb-2">Operational Transformation</h2>
+                    <p class="text-slate-500 text-sm mb-8">Performance metrics from the Hansen Managed Services deployment.</p>
+                    <div class="chart-container">
+                        <canvas id="impactChart"></canvas>
+                    </div>
+                </div>
+                <div id="impact-stats" class="space-y-6"></div>
+            </div>
+        </section>
+
+        <!-- Generative AI & Agent Development (data-driven pillar tabs) -->
+        <section id="tech" class="mb-20">
+            <div class="text-center mb-12">
+                <p class="text-emerald-600 font-bold text-xs tracking-widest uppercase mb-2">Generative AI &amp; Agent Development</p>
+                <h2 class="text-3xl font-bold tracking-tight">Core Contribution Architectures</h2>
+                <p class="text-slate-500 mt-2">Explore the logic behind the award-winning AI transformation.</p>
+            </div>
+
+            <div id="pillar-buttons" class="flex flex-wrap justify-center gap-4 mb-10"></div>
+
+            <div id="pillar-content" class="glass-card p-8 md:p-12 shadow-md">
+                <!-- Content injected by JS from PILLARS[] -->
+            </div>
+        </section>
+
+        <!-- Security & Governance -->
+        <section id="security" class="mb-20">
+            <div class="bg-slate-900 rounded-[2.5rem] overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-12 flex flex-col justify-center">
+                        <div class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-bold rounded-full mb-6 uppercase tracking-widest">Enterprise Standard</div>
+                        <h2 class="text-3xl font-bold text-white mb-6 leading-tight">Securing the AI Layer with OAuth 2.0</h2>
+                        <p class="text-slate-400 leading-relaxed mb-8">
+                            Unlike standard chatbot implementations, my architecture leverages <strong>OAuth 2.0 Authorization Code Flows</strong>. This ensures the AI engine only accesses data and executes provisioning commands under strictly audited, authenticated service accounts.
+                        </p>
+                        <ul class="space-y-4 text-slate-300">
+                            <li class="flex items-center"><span class="text-emerald-500 mr-3">✓</span> Token-based access for RAG data sources</li>
+                            <li class="flex items-center"><span class="text-emerald-500 mr-3">✓</span> Scope-limited provisioning via HANSEN APIs</li>
+                            <li class="flex items-center"><span class="text-emerald-500 mr-3">✓</span> Full audit trails for every AI-triggered action</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800/50 p-12 flex items-center justify-center border-l border-white/5">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-emerald-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-emerald-500/20">
+                                <span class="text-3xl">🛡️</span>
+                            </div>
+                            <h4 class="text-white font-bold text-xl mb-2">Zero Trust AI Architecture</h4>
+                            <p class="text-slate-500 text-sm">Security validated by enterprise compliance standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Automation Portfolio (data-driven, filterable) -->
+        <section id="automations" class="mb-20">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold tracking-tight">Automation Portfolio</h2>
+                <p class="text-slate-500 mt-2 max-w-2xl mx-auto">7+ years of test automation, monitoring, and provisioning tooling across Cerillion &amp; Liberate CRM. Add a new entry to <code class="text-emerald-600 font-semibold">AUTOMATIONS[]</code> and it appears here automatically.</p>
+            </div>
+            <div id="automation-filters" class="flex flex-wrap justify-center gap-3 mb-10"></div>
+            <div id="automation-grid" class="grid md:grid-cols-2 gap-6"></div>
+        </section>
+
+        <!-- Experience timeline -->
+        <section id="experience" class="mb-20">
+            <h2 class="text-3xl font-bold tracking-tight text-center mb-10">Experience</h2>
+            <div id="experience-list" class="space-y-6 max-w-3xl mx-auto"></div>
+        </section>
+
+        <!-- Personal Projects -->
+        <section id="projects" class="mb-20">
+            <h2 class="text-3xl font-bold tracking-tight text-center mb-10">Independent Builds</h2>
+            <div id="personal-projects" class="grid md:grid-cols-2 gap-6"></div>
+        </section>
+
+        <!-- Mentoring -->
+        <section id="mentoring" class="mb-20">
+            <div class="glass-card p-8 md:p-12 shadow-md">
+                <h2 class="text-2xl font-bold mb-8 text-center">Mentoring &amp; Team Enablement</h2>
+                <div id="mentoring-list" class="grid md:grid-cols-2 gap-8"></div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold mb-6 text-center">Stack</h2>
+            <div id="skills-cloud" class="flex flex-wrap justify-center gap-2"></div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t py-12">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-slate-400 text-sm font-medium">© 2026 Saravanan M | Lead AI Engineer Portfolio</p>
+            <div class="mt-4 flex justify-center space-x-6 text-slate-300">
+                <span class="hover:text-slate-600 transition cursor-default">Privacy</span>
+                <span class="hover:text-slate-600 transition cursor-default">Terms</span>
+                <span class="hover:text-slate-600 transition cursor-default">Secure Deploy</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    /* =====================================================================
+       DATA LAYER — everything on this page is generated from the arrays
+       below. To expand the portfolio later, add an object to the relevant
+       array; no HTML/layout editing required.
+       ===================================================================== */
+
+    const IMPACT_STATS = [
+        { value: "70%", label: "Reduction in Incident Response Time", emphasis: true },
+        { value: "4+",  label: "Critical Manual Bottlenecks Automated" },
+        { value: "100%",label: "OAuth 2.0 Compliance for AI APIs" },
+    ];
+
+    // "Core Contribution Architectures" — Generative AI & Agent Development
+    const PILLARS = [
+        {
+            key: "agent",
+            nav: "Provagent GPT",
+            title: "Provagent GPT",
+            description: "Architected a sophisticated prompt-based AI agent integrated with internal telecom APIs (HANSEN SPM/DPM) to automate complex provisioning flows, replacing manual intervention with self-healing runbooks.",
+            stack: ["LangChain", "HANSEN SPM/DPM API", "FastAPI", "Prompt Engineering"],
+            outcome: "Manual provisioning intervention replaced with self-healing runbooks"
+        },
+        {
+            key: "triage",
+            nav: "Hybrid AI Triage &amp; SOP",
+            title: "Hybrid AI Triage System &amp; SOP",
+            description: "Architected a Hybrid AI Triage System utilizing a Python-based regex classifier paired with first-level analysis from internal APIs of different applications, plus LLM fallbacks and context engines, to automate RCA, data-driven SOPs, and alert correlation &mdash; dramatically reducing MTTR and operational costs. Integrating OAuth 2.0 into the hybrid triage engine ensured this high-impact AI automation stays compliant with enterprise security standards while delivering a 70% response acceleration.",
+            stack: ["Python Regex", "Internal APIs", "LLM Fallback", "OAuth 2.0", "Splunk Telemetry"],
+            outcome: "70% response acceleration, reduced MTTR &amp; operational cost"
+        },
+        {
+            key: "rag",
+            nav: "Secure RAG",
+            title: "RAG Knowledge Engines",
+            description: "Implemented RAG-based Knowledge Engines using vector databases to enable semantic search for technical documentation, allowing support teams to retrieve resolution steps instantly.",
+            stack: ["ChromaDB", "Vector Embeddings", "Semantic Search"],
+            outcome: "Instant retrieval of resolution steps for support teams"
+        },
+        {
+            key: "enablement",
+            nav: "AI Productivity",
+            title: "AI Productivity &amp; Team Enablement",
+            description: "Led the integration of LLMs and prompt engineering best practices into legacy enterprise workflows, mentoring a team of engineers to accelerate development cycles.",
+            stack: ["Prompt Engineering", "LLM Tooling", "Team Enablement"],
+            outcome: "Accelerated development cycles across the team"
+        },
+        // Add new AI/agent pillars here: { key, nav, title, description, stack: [], outcome }
+    ];
+
+    const AUTOMATION_CATEGORIES = [
+        { key: "all",          label: "All" },
+        { key: "testing",      label: "Test Automation" },
+        { key: "monitoring",   label: "Monitoring &amp; Alerting" },
+        { key: "provisioning", label: "Provisioning" },
+        { key: "reporting",    label: "Dashboards &amp; Reporting" },
+        { key: "support",      label: "Production Support" },
+    ];
+
+    const AUTOMATIONS = [
+        {
+            title: "CRM Regression &amp; Smoke Suite",
+            category: "testing",
+            description: "Automated smoke tests and end-to-end validations for Cerillion and Liberate CRM using Python + Selenium, wired into deployment pipelines.",
+            stack: ["Python", "Selenium", "Nagios", "Splunk"],
+            outcome: "Caught regressions before UAT sign-off",
+        },
+        {
+            title: "Robot Framework GUI Simulation",
+            category: "testing",
+            description: "Behaviour-driven test cases that simulate real user actions across CRM GUI components for repeatable, readable regression coverage.",
+            stack: ["Robot Framework", "Python"],
+            outcome: "Reusable, non-technical-readable test suite",
+        },
+        {
+            title: "Monitoring Bot for Nagios &amp; Splunk",
+            category: "monitoring",
+            description: "Proactively watches Nagios and Splunk dashboards and pushes automatic status reports to stakeholders.",
+            stack: ["Python", "Nagios API", "Splunk API"],
+            outcome: "Removed manual dashboard watch shifts",
+        },
+        {
+            title: "SSL &amp; Website Health Checks",
+            category: "monitoring",
+            description: "Scheduled checks for SSL certificate validity and website/application health, alerting before expiry or downtime becomes customer-facing.",
+            stack: ["Python", "Cron", "Alerting"],
+            outcome: "Zero surprise cert expiries",
+        },
+        {
+            title: "Order Count Email Monitor",
+            category: "monitoring",
+            description: "Where no GUI existed to check actual order counts, this reads straight from the DB and reports by email on a schedule.",
+            stack: ["Python", "SQL", "SMTP"],
+            outcome: "Visibility into a previously GUI-less process",
+        },
+        {
+            title: "Binfile Configuration Reader",
+            category: "monitoring",
+            description: "Parses raw .bin configuration files to surface configuration issues that would otherwise require manual byte-level inspection.",
+            stack: ["Python", "Binary Parsing"],
+            outcome: "Faster config-issue diagnosis",
+        },
+        {
+            title: "HANSEN SPM / DPM Provisioning Automation",
+            category: "provisioning",
+            description: "Automated manual provisioning steps in HANSEN Service Profile Manager and Device Provisioning Manager.",
+            stack: ["Python", "HANSEN SPM", "HANSEN DPM"],
+            outcome: "Removed a core manual bottleneck",
+        },
+        {
+            title: "Service Removal Auto-Ticketing",
+            category: "provisioning",
+            description: "Automatically raises order tickets for service removal requests directly from the account, with no manual entry.",
+            stack: ["Python", "Ticketing API"],
+            outcome: "Same-day removal requests, no manual lag",
+        },
+        {
+            title: "SOP Automation via APIs",
+            category: "provisioning",
+            description: "Turned standard operating procedures into scripted API calls, removing manual click-through steps from routine operations.",
+            stack: ["Python", "REST APIs"],
+            outcome: "Standardised, repeatable SOP execution",
+        },
+        {
+            title: "Automation Dashboards",
+            category: "reporting",
+            description: "Internal dashboards surfacing automation run history, ticket trends, and monitoring status for the wider team.",
+            stack: ["Django", "MongoDB", "HTML"],
+            outcome: "Single pane of glass for automation health",
+        },
+        {
+            title: "Ticketing Ops Automation (SCCD, ACUT)",
+            category: "reporting",
+            description: "Scripted routine ticketing operations across SCCD and ACUT platforms, cutting manual handling time.",
+            stack: ["Python", "SCCD", "ACUT"],
+            outcome: "Reduced manual ticket handling",
+        },
+        {
+            title: "Daily Reports &amp; DSR/WSR Automation",
+            category: "reporting",
+            description: "Automated daily reports, ticket analysis, and monitoring log summaries, plus scripted DSR/WSR generation sent directly to stakeholders.",
+            stack: ["Python", "Email Automation"],
+            outcome: "Zero manual report compilation",
+        },
+        {
+            title: "Sev1–Sev3 Production Support",
+            category: "support",
+            description: "Handled production incidents end to end — debugging logs, coordinating fixes, deploying patches across web application server versions.",
+            stack: ["Log Analysis", "Patch Deployment", "UAT/Prod"],
+            outcome: "Faster incident resolution, fewer repeat pages",
+        },
+        // Add new automations here: { title, category, description, stack: [], outcome }
+    ];
+
+    const EXPERIENCE = [
+        {
+            role: "Lead / Senior Automation &amp; AIOps Engineer",
+            company: "Hansen Managed Services",
+            period: "Add exact dates here",
+            summary: "Owns test automation, monitoring, and — since 2026 — agentic AI tooling across Cerillion and Liberate CRM stacks for telecom clients.",
+        },
+        // Add earlier roles here as: { role, company, period, summary }
+    ];
+
+    const PERSONAL_PROJECTS = [
+        {
+            title: "Personal Billing Application",
+            description: "A full billing app built solo with an AI-assisted development workflow — designed the schema, business logic, and UI myself while using AI tooling to accelerate implementation and packaging. Ships as a native Windows executable, not just a web app.",
+            stack: ["Java", "React", "JavaScript", "Vite", "AI-assisted dev"],
+            outcome: "Packaged &amp; distributed as a standalone Windows executable",
+        },
+        // Add new personal projects here: { title, description, stack: [], outcome }
+    ];
+
+    const MENTORING = [
+        {
+            title: "LLM &amp; Prompt Engineering Enablement",
+            description: "Led the integration of LLMs and prompt engineering best practices into legacy enterprise workflows, mentoring a team of engineers to accelerate development cycles.",
+        },
+        {
+            title: "Cross-team Knowledge Transfer",
+            description: "Ran structured knowledge-transfer sessions with both senior and junior colleagues across the systems development lifecycle.",
+        },
+        {
+            title: "QA / DevOps Collaboration",
+            description: "Worked directly with QA and DevOps to get automated checks embedded into deployment pipelines rather than bolted on afterward.",
+        },
+        // Add new mentoring entries here: { title, description }
+    ];
+
+    const SKILLS = [
+        "Python", "Selenium", "Robot Framework", "Django", "MongoDB", "FastAPI",
+        "LangChain", "Prompt Engineering", "OAuth 2.0", "Nagios", "Splunk",
+        "Java", "React", "JavaScript", "Vite", "SQL", "REST APIs", "Regex",
+        "Vector Search / RAG", "Git", "Production Support",
+    ];
+
+    /* =====================================================================
+       RENDER LAYER
+       ===================================================================== */
+
+    function renderImpactStats() {
+        document.getElementById('impact-stats').innerHTML = IMPACT_STATS.map(s => `
+            <div class="glass-card p-6 shadow-lg ${s.emphasis ? 'bg-emerald-600 text-white border-none' : ''}">
+                <h3 class="text-3xl font-bold mb-1 ${s.emphasis ? '' : 'text-slate-800'}">${s.value}</h3>
+                <p class="${s.emphasis ? 'text-emerald-100' : 'text-slate-500'} text-sm">${s.label}</p>
+            </div>
+        `).join('');
+    }
+
+    let activePillar = PILLARS[0].key;
+
+    function renderPillarButtons() {
+        document.getElementById('pillar-buttons').innerHTML = PILLARS.map(p => `
+            <button data-key="${p.key}" class="pillar-btn ${p.key === activePillar ? 'is-active' : ''}">${p.nav}</button>
+        `).join('');
+        document.querySelectorAll('#pillar-buttons button').forEach(btn => {
+            btn.addEventListener('click', () => { activePillar = btn.dataset.key; renderPillarButtons(); renderPillarContent(); });
+        });
+    }
+
+    function renderPillarContent() {
+        const data = PILLARS.find(p => p.key === activePillar);
+        document.getElementById('pillar-content').innerHTML = `
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-3xl font-bold mb-4 text-slate-900">${data.title}</h3>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8">${data.description}</p>
+                    <div class="flex flex-wrap gap-2">
+                        ${data.stack.map(s => `<span class="tech-pill">${s}</span>`).join('')}
+                    </div>
+                </div>
+                <div class="bg-emerald-50 rounded-3xl p-8 flex flex-col justify-center border border-emerald-100">
+                    <span class="text-emerald-600 font-bold uppercase tracking-widest text-xs mb-2">Key Business Outcome</span>
+                    <p class="text-2xl font-bold text-slate-800">${data.outcome}</p>
+                </div>
+            </div>
+        `;
+    }
+
+    let activeCategory = 'all';
+
+    function renderAutomationFilters() {
+        document.getElementById('automation-filters').innerHTML = AUTOMATION_CATEGORIES.map(c => `
+            <button data-key="${c.key}" class="filter-chip ${c.key === activeCategory ? 'is-active' : ''}">${c.label}</button>
+        `).join('');
+        document.querySelectorAll('#automation-filters button').forEach(btn => {
+            btn.addEventListener('click', () => { activeCategory = btn.dataset.key; renderAutomationFilters(); renderAutomationGrid(); });
+        });
+    }
+
+    function renderAutomationGrid() {
+        const items = activeCategory === 'all' ? AUTOMATIONS : AUTOMATIONS.filter(a => a.category === activeCategory);
+        document.getElementById('automation-grid').innerHTML = items.map(a => `
+            <div class="glass-card p-6 shadow-md">
+                <h3 class="font-bold text-lg mb-2 text-slate-900">${a.title}</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-4">${a.description}</p>
+                <div class="flex flex-wrap gap-2 mb-4">${a.stack.map(s => `<span class="tech-pill">${s}</span>`).join('')}</div>
+                <div class="text-emerald-600 font-bold text-sm">→ ${a.outcome}</div>
+            </div>
+        `).join('') || `<p class="text-slate-400 text-sm text-center col-span-2">Nothing in this category yet.</p>`;
+    }
+
+    function renderExperience() {
+        document.getElementById('experience-list').innerHTML = EXPERIENCE.map(e => `
+            <div class="glass-card p-6 shadow-md">
+                <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
+                    <h3 class="text-lg font-bold text-slate-900">${e.role}</h3>
+                    <span class="text-emerald-600 font-semibold text-sm">${e.company}</span>
+                    <span class="text-slate-400 text-sm">${e.period}</span>
+                </div>
+                <p class="text-slate-500 text-sm leading-relaxed">${e.summary}</p>
+            </div>
+        `).join('');
+    }
+
+    function renderPersonalProjects() {
+        document.getElementById('personal-projects').innerHTML = PERSONAL_PROJECTS.map(p => `
+            <div class="glass-card p-6 shadow-md border-2 border-emerald-100">
+                <h3 class="font-bold text-lg mb-2 text-slate-900">${p.title}</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-4">${p.description}</p>
+                <div class="flex flex-wrap gap-2 mb-4">${p.stack.map(s => `<span class="tech-pill">${s}</span>`).join('')}</div>
+                <div class="text-emerald-600 font-bold text-sm">→ ${p.outcome}</div>
+            </div>
+        `).join('');
+    }
+
+    function renderMentoring() {
+        document.getElementById('mentoring-list').innerHTML = MENTORING.map(m => `
+            <div>
+                <h3 class="font-bold text-slate-900 mb-2">${m.title}</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">${m.description}</p>
+            </div>
+        `).join('');
+    }
+
+    function renderSkills() {
+        document.getElementById('skills-cloud').innerHTML = SKILLS.map(s => `<span class="tech-pill">${s}</span>`).join('');
+    }
+
+    function initCharts() {
+        const ctx = document.getElementById('impactChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Mar', 'Jun', 'Aug', 'Oct', 'Dec'],
+                datasets: [{
+                    label: 'Manual Process Time (Min)',
+                    data: [60, 58, 55, 50, 48, 45],
+                    borderColor: '#94a3b8',
+                    borderDash: [5, 5],
+                    fill: false,
+                    tension: 0.4
+                }, {
+                    label: 'AI-Enabled Process Time (Min)',
+                    data: [60, 40, 25, 18, 12, 9],
+                    borderColor: '#059669',
+                    borderWidth: 4,
+                    fill: true,
+                    backgroundColor: 'rgba(5, 150, 105, 0.05)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'bottom' } },
+                scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } }, x: { grid: { display: false } } }
+            }
+        });
+    }
+
+    function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    window.onload = () => {
+        renderImpactStats();
+        renderPillarButtons();
+        renderPillarContent();
+        renderAutomationFilters();
+        renderAutomationGrid();
+        renderExperience();
+        renderPersonalProjects();
+        renderMentoring();
+        renderSkills();
+        initCharts();
+    };
+    </script>
+</body>
+</html>
