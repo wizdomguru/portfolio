@@ -63,14 +63,26 @@
                     </a>
                     </div>
             </div>
-            <div class="hidden md:block">
-                <div class="w-64 h-64 rounded-3xl overflow-hidden border-4 border-emerald-500/30 shadow-2xl bg-slate-800 flex items-center justify-center">
-                    <img src="assets/profile.jpg" alt="Saravanan M"
-                         class="w-full h-full object-cover"
-                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <span style="display:none;" class="w-full h-full items-center justify-center text-slate-500 text-6xl font-bold">SM</span>
+            
+            <!-- ====== UPDATED PROFILE IMAGE CONTAINER ====== -->
+            <div class="hidden md:block relative group">
+                <!-- 1. Ambient Glow Layer (animates on hover) -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-emerald-400 to-emerald-700 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500"></div>
+                
+                <!-- 2. Gradient Ring Wrapper -->
+                <div class="relative w-64 h-64 rounded-3xl p-1 bg-gradient-to-tr from-emerald-400 via-emerald-600 to-slate-800 flex items-center justify-center">
+                    
+                    <!-- 3. Inner Container (clips the image) -->
+                    <div class="w-full h-full rounded-[20px] overflow-hidden bg-slate-900 flex items-center justify-center">
+                        <img src="assets/profile.jpg" alt="Saravanan M"
+                             class="w-full h-full object-cover"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <span style="display:none;" class="w-full h-full items-center justify-center text-slate-500 text-6xl font-bold">SM</span>
+                    </div>
                 </div>
             </div>
+            <!-- ============================================== -->
+            
         </div>
     </section>
 
